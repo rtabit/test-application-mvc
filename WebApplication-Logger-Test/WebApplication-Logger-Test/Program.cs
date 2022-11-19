@@ -1,5 +1,14 @@
 var builder = WebApplication.CreateBuilder(args);
 
+// https://github.com/microsoft/ApplicationInsights-dotnet/blob/develop/NETCORE/src/Shared/Extensions/ApplicationInsightsServiceOptions.cs
+var aiOptions = new Microsoft.ApplicationInsights.AspNetCore.Extensions.ApplicationInsightsServiceOptions();
+// Disables adaptive sampling.
+aiOptions.EnableAdaptiveSampling = false;
+// Disables QuickPulse (Live Metrics stream).
+aiOptions.EnableQuickPulseMetricStream = false;
+
+builder.Services.AddApplicationInsightsTelemetry(aiOptions);
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddApplicationInsightsTelemetry(builder.Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]);
