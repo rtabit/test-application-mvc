@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>WebApplication_Logger_Test</RootNamespace>
+    <ApplicationInsightsResourceId>/subscriptions/721fec27-b471-4cde-81ef-33472bfe27fb/resourceGroups/powershell-connect-rg/providers/microsoft.insights/components/app-insights</ApplicationInsightsResourceId>
+    <UserSecretsId>415fe6ba-6495-4858-be0d-d70e419446bb</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Monitor.OpenTelemetry.Exporter" Version="1.0.0-beta.5" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
+  </ItemGroup>
+
+</Project>
